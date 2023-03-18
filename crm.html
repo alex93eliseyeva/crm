@@ -8,11 +8,11 @@
   </head>
 
   <body>
-    <section class="section">
-      <div class="container">
-        <h1 class="section__heading">ДОБАВИТЬ ТОВАР</h1>
+    <div class="overlay">
+      <div class="modal">
+        <h2 class="modal__heading">Добавить товар</h2>
 
-        <button class="cross"></button>
+        <button class="modal__close" type="submit"></button>
 
         <form class="form" action="https://jsonplaceholder.typicode.com/posts" method="post" target="_blank">
           <fieldset class="form__fieldset">
@@ -29,14 +29,14 @@
             
 
             <label class="form__label" for="discount">Дисконт</label>
-            <div class="input-container">
+            <div class="form__optional-input">
               <input class="form__checkbox" type="checkbox" aria-label="Наличие скидки">
               <input class="form__input" type="text" name="discount" id="discount" disabled>
             </div>
             
 
             <label class="form__label" for="description">Описание</label>
-            <input class="form__input form__input_type_textarea" type="text" name="description" id="description" required></input>
+            <textarea class="form__input" type="text" name="description" id="description" rows="5" required></textarea>
             
 
             <label class="form__label" for="count">Количество</label>
@@ -46,10 +46,10 @@
             <label class="form__label" for="price">Цена</label>
             <input class="form__input" type="number" name="price" id="price" required>
           </fieldset>
-        </form>
-        
-        <button class="button" type="submit">Добавить товар</button>
+
+          <button class="form__button" type="submit">Добавить товар</button>
+        </form>       
       </div>
-    </section>
+    </div>
   </body>
 </html>
