@@ -32,6 +32,7 @@ body {
   padding: 50px 30px;
   background-color: rgba(0, 0, 0, .2);
   z-index: 999;
+  overflow-y: auto;
 }
 
 .modal {
@@ -79,7 +80,7 @@ body {
 .form__label {
   display: block;
   margin-bottom: 5px;
-  margin-left: 10px;
+  padding-left: 10px;
   font-size: 12px;
   font-weight: 600;
   line-height: 15px;
@@ -108,9 +109,12 @@ body {
 }
 
 .form__checkbox {
-  appearance: none;
   margin: 0;
-  display: block;
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-left: -50px;
 }
 
 .form__checkbox:before {
@@ -128,13 +132,19 @@ body {
 .form__checkbox:after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 40px;
-  height: 40px;
-  background-color: #F2F4FF;
-  border-radius: 6px;
+  top: 12px;
+  left: 10px;
+  width: 20px;
+  height: 10px;
+  border: 3px solid black;
+  border-top: none;
+  border-right: none;
+  opacity: 0;
+  transform: rotate(-45deg);
+}
+
+.form__checkbox:checked:after {
+  opacity: 1;
 }
 
 .form__button {
